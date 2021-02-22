@@ -1,21 +1,37 @@
 {% extends 'base.html' %}
 {% load bootstrap5 %}
+{% load static %}
 
+
+{% block stylesheet %}
+<style>
+  .form-group { margin-bottom: 15px; }
+  label { margin-bottom: 5px; }
+</style>
+{% endblock stylesheet %}
+  
 {% block content %}
 
 <div class="container pd-x-0">
   <div class="row">
     <div class="col-md-6 offset-md-3">
+      <div class="text-center mb-4">
+        <img src="{% static 'images/logo_fpma.png' %}" alt="Logo" style="height: 160px;">
+        <h3>
+          Formulaire d'inscription pour le culte du dimanche 07 mars 2021 à 9h30 à l'Eglise St Yves le Port
+        </h3>
+        
+        <h4>Nombre de places restantes : 85</h4>
 
-      {{ event.name }}
-
+        <h4>Inscription par foyer uniquement</h4>
+      </div>
       <div class="card">
         <div class="card-body">
           <form method="post">
             {% csrf_token %}
             {% bootstrap_form form %}
             {% buttons %}
-              <button type="submit" name="valid" class="btn btn-primary btn-block">S'inscrire</button>
+              <button type="submit" name="valid" class="w-100 btn btn-primary btn-block">S'inscrire</button>
             {% endbuttons %}
           </form>
         </div>

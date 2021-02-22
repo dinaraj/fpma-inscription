@@ -126,6 +126,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT = os.path.join(BASE_DIR, '../staticfiles')
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+
 MESSAGE_TAGS = {
     message_constants.DEBUG: 'debug',
     message_constants.INFO: 'info',
