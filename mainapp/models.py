@@ -19,7 +19,7 @@ class Participant(models.Model):
     email = models.EmailField(_("Adresse mail"), max_length=250)
     phone = models.CharField(_("Numéro de téléphone"), max_length=15)
     number = models.IntegerField(_("Nombre de personnes"), validators=[MinValueValidator(1), MaxValueValidator(8)])
-    list_names = models.TextField(_("Prénom des personnes"))
+    list_names = models.TextField(_("Prénom des personnes"), blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
