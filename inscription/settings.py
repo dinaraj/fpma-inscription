@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
     'bootstrap5',
     'debug_toolbar',
+    'import_export',
 
     'mainapp',
 ]

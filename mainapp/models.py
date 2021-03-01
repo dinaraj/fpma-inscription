@@ -10,6 +10,9 @@ class Event(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def __unicode__(self):
+        return self.name
+    
     def __str__(self):
         return self.name
 
@@ -22,6 +25,9 @@ class Participant(models.Model):
     list_names = models.TextField(_("Prénom des personnes"), blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    def __unicode__(self):
+        return self.name + ' (' + str(self.number) + ' pers.)'
+
     def __str__(self):
         return self.name + ' (' + str(self.number) + ' pers.)'
-    
+            
