@@ -9,6 +9,6 @@ Nombre de personnes : {{ obj.number }}
 Liste des accompagnants : 
 {{ obj.list_names }}
 
-En cas de désistement ou changement, merci de prévenir rapidement par SMS ou par téléphone au 06 92 98 02 96.
-
-FPMA Réunion
+{% if footer %}
+{{ footer }}
+{% endif %}

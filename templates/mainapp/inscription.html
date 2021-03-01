@@ -2,6 +2,9 @@
 {% load bootstrap5 %}
 {% load static %}
 
+{% block meta_title %}
+<title>{{ event.paroisse }}</title>
+{% endblock meta_title %}
 
 {% block stylesheet %}
 <style>
@@ -24,6 +27,11 @@
         <h4>Nombre de places restantes à cet instant : <strong class="text-danger">{{ places_restantes }}</strong></h4>
 
         <h5>Inscription par foyer uniquement. <br>Les enfants qui occupent une place doivent également être inscrits.</h5>
+        
+        {% if event.description %}
+          <p>{{ event.description }}</p>
+        {% endif %}
+
       </div>
       <div class="card">
         <div class="card-body">

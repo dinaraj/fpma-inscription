@@ -38,7 +38,7 @@ def inscription(request, template='mainapp/inscription.html'):
             participant.save()
 
             # send mail admin + user
-            alerte_inscription(participant)
+            alerte_inscription(participant, event)
 
             messages.success(request, "Votre inscription pour " + str(participant.number) + " personne(s) a bien été enregistrée")
             return redirect("inscription")
