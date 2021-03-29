@@ -17,6 +17,8 @@ def inscription(request, template='mainapp/inscription.html'):
     datestart = datetime.strptime('2021-03-29 22:05:00', '%Y-%m-%d %H:%M:%S')
     now = datetime.now()
     
+    print(datestart)
+    print(now)
     if datetime.now() <= datestart:
         return render(request, 'mainapp/inscription_too_early.html', {now: now})
     
