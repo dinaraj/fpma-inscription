@@ -1,6 +1,7 @@
 from django.contrib import messages
 from django.db.models import Sum
 from django.shortcuts import render, redirect, get_object_or_404
+from datetime import datetime
 
 from .forms import InscriptionParticipant
 from .models import Participant, Event
@@ -13,6 +14,12 @@ def inscription(request, template='mainapp/inscription.html'):
     nbPlacesReservees = event.participants.aggregate(Sum('number'))['number__sum'] or 0
     nbPlacesRestantes = nbPlacesDispo - nbPlacesReservees
 
+    datestart = datetime.strptime('2021-03-29 22:05:00', '%Y-%m-%d %H:%M:%S')
+    now = datetime.now()
+    
+    if datetime.now() <= datestart:
+        return render(request, 'mainapp/inscription_too_early.html', {now: now})
+    
     if nbPlacesRestantes <= 0:
         return render(request, 'mainapp/inscription_cloture.html')
     
