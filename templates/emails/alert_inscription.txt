@@ -1,6 +1,6 @@
 Bonjour, 
 
-Nous avons bien pris en compte votre inscription : 
+Nous avons bien pris en compte votre inscription pour {{ event.name }} : 
 
 Nom et prénom : {{ obj.name }}
 Adresse mail : {{ obj.email }}

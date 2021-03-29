@@ -4,6 +4,7 @@ from django.urls import reverse
 
 def alerte_inscription(participant, event):
     params = {
+        'event': event,
         'obj': participant,
         'footer': event.email_footer,
     }
