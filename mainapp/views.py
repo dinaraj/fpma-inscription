@@ -14,7 +14,7 @@ def inscription(request, template='mainapp/inscription.html'):
     nbPlacesReservees = event.participants.aggregate(Sum('number'))['number__sum'] or 0
     nbPlacesRestantes = nbPlacesDispo - nbPlacesReservees
 
-    datestart = datetime.strptime('2021-03-29 22:14:00', '%Y-%m-%d %H:%M:%S')
+    datestart = datetime.strptime('2021-03-30 18:30:00', '%Y-%m-%d %H:%M:%S')
     now = datetime.now()
     
     print(datestart)

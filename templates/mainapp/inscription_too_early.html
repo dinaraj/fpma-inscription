@@ -23,8 +23,7 @@
       <div class="text-center mb-4">
         <img src="{% static 'images/logo_fpma.png' %}" alt="Logo" style="height: 160px;">
         <h3 class="mt-5">
-          Les inscriptions seront ouvertes le mardi 30 mars <br> à partir de 18h30<br>
-          {{ now }}
+          L'inscription sera ouverte le mardi 30 mars <br> à partir de 18h30<br>
           <div id="countdown"></div>
         </h3>
       </div>
@@ -37,7 +36,7 @@
 
 {% block scripts %}
 <script>
-  var countDownDate = new Date("2021-03-29T22:14:00").getTime();
+  var countDownDate = new Date("2021-03-30T18:30:00").getTime();
   
   // Update the count down every 1 second
   var x = setInterval(function() {
@@ -55,7 +54,7 @@
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
   
     // Display the result in the element with id="demo"
-    document.getElementById("countdown").innerHTML = hours + "h "
+    document.getElementById("countdown").innerHTML = "dans : " + hours + "h "
     + minutes + "mn " + seconds + "s ";
   
     // If the count down is finished, write some text
